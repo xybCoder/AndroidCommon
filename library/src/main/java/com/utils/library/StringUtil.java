@@ -52,7 +52,7 @@ public class StringUtil {
      * @param symbol
      * @return
      */
-    public static String getLimitLengthString(String str, int len, String symbol) {
+    public static String getLimitLengthStr(String str, int len, String symbol) {
         int    iLen                = len * 2;
         int    counterOfDoubleByte = 0;
         String strRet              = "";
@@ -87,13 +87,13 @@ public class StringUtil {
     /**
      * 取得字符串的实际长度（考虑了汉字的情况一个汉字按照俩个字符算）
      *
-     * @param SrcStr 源字符串
+     * @param str 源字符串
      * @return 字符串的实际长度
      */
-    public static int getStringLen(String SrcStr) {
+    public static int getStrLength(String str) {
         int return_value = 0;
-        if (SrcStr != null) {
-            char[] theChars = SrcStr.toCharArray();
+        if (str != null) {
+            char[] theChars = str.toCharArray();
             for (int i = 0; i < theChars.length; i++) {
                 return_value += (theChars[i] <= 255) ? 1 : 2;
             }
@@ -138,15 +138,15 @@ public class StringUtil {
     /**
      * 根据指定的字符把源字符串分割成一个数组
      *
-     * @param src
+     * @param str
      * @return
      */
-    public static List<String> parseString2ListByCustomerPattern(String symbol, String src) {
+    public static List<String> Str2List(String str,String symbol) {
 
-        if (src == null)
+        if (str == null)
             return null;
         List<String> list   = new ArrayList<String>();
-        String[]     result = src.split(symbol);
+        String[]     result = str.split(symbol);
         for (int i = 0; i < result.length; i++) {
             list.add(result[i]);
         }
@@ -156,15 +156,15 @@ public class StringUtil {
     /**
      * 将list 用传入的分隔符组装为String
      */
-    public static String listToStringSlipStr(List list, String slipStr) {
+    public static String List2Str(List list, String symbol) {
         StringBuffer returnStr = new StringBuffer();
         if (list != null && list.size() > 0) {
             for (int i = 0; i < list.size(); i++) {
-                returnStr.append(list.get(i)).append(slipStr);
+                returnStr.append(list.get(i)).append(symbol);
             }
         }
         if (returnStr.toString().length() > 0) {
-            return returnStr.toString().substring(0, returnStr.toString().lastIndexOf(slipStr));
+            return returnStr.toString().substring(0, returnStr.toString().lastIndexOf(symbol));
         } else {
             return "";
         }
@@ -264,7 +264,7 @@ public class StringUtil {
      * @function:字符串转换unicode
      * @实现native2ascii.exe类似的功能
      */
-    public static String string2Unicode(String string) {
+    public static String str2Unicode(String string) {
         StringBuffer unicode = new StringBuffer();
         for (int i = 0; i < string.length(); i++) {
             char c = string.charAt(i);
@@ -277,7 +277,7 @@ public class StringUtil {
      * @fuunction:unicode 转字符串
      * @实现native2ascii.exe类似的功能
      */
-    public static String unicode2String(String unicode) {
+    public static String unicode2Str(String unicode) {
         StringBuffer string = new StringBuffer();
         String[]     hex    = unicode.split("\\\\u");
         for (int i = 1; i < hex.length; i++) {
@@ -317,7 +317,7 @@ public class StringUtil {
      * @param str
      * @return
      */
-    public String SimpleEncoding(String str) {
+    public String getStrEncode(String str) {
         return StringImpl.simpleEncoding(str);
     }
 
@@ -355,7 +355,7 @@ public class StringUtil {
      * @param str
      * @return
      */
-    public static String nullStrToEmpty(Object str) {
+    public static String nullToEmptyStr(Object str) {
         return (str == null ? "" : (str instanceof String ? (String)str : str.toString()));
     }
 

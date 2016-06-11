@@ -24,7 +24,7 @@ public class SPUtil {
     /**
      * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
      */
-    public static void putAndApply(Context context, String key, Object object) {
+    public static void setSP(Context context, String key, Object object) {
         SharedPreferences sp = context.getSharedPreferences(getSpName(context), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
@@ -48,7 +48,7 @@ public class SPUtil {
     /**
      * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
      */
-    public static Object getSp(Context context, String key, Object defaultObject) {
+    public static Object getSP(Context context, String key, Object defaultObject) {
         SharedPreferences sp = context.getSharedPreferences(getSpName(context), Context.MODE_PRIVATE);
 
         if (defaultObject instanceof String) {
@@ -69,7 +69,7 @@ public class SPUtil {
     /**
      * 移除某个key值已经对应的值
      */
-    public static void remove(Context context, String key) {
+    public static void removeSP(Context context, String key) {
         SharedPreferences sp = context.getSharedPreferences(getSpName(context), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.remove(key);

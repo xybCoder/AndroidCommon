@@ -42,19 +42,19 @@ public class GsonUtil {
         }
     }
 
-    public static String objectToJson(Object ts) {
+    public static String object2Json(Object obj) {
         String jsonStr = null;
         if (gson != null) {
-            jsonStr = gson.toJson(ts);
+            jsonStr = gson.toJson(obj);
         }
         return jsonStr;
     }
 
 
-    public static String objectToJson(Object ts, Type type) {
+    public static String object2Json(Object obj, Type type) {
         String jsonStr = null;
         if (gson != null) {
-            jsonStr = gson.toJson(ts, type);
+            jsonStr = gson.toJson(obj, type);
         }
         return jsonStr;
     }
@@ -79,7 +79,7 @@ public class GsonUtil {
     }
 
 
-    public static List<?> jsonToList(String jsonStr) {
+    public static List<?> json2List(String jsonStr) {
         List<?> objList = null;
         if (gson != null) {
             Type type = new com.google.gson.reflect.TypeToken<List<?>>() {
@@ -90,7 +90,7 @@ public class GsonUtil {
     }
 
 
-    public static List<?> jsonToList(String jsonStr, Type type) {
+    public static List<?> json2List(String jsonStr, Type type) {
         List<?> objList = null;
         if (gson != null) {
             objList = gson.fromJson(jsonStr, type);
@@ -99,7 +99,7 @@ public class GsonUtil {
     }
 
 
-    public static Map<?, ?> jsonToMap(String jsonStr) {
+    public static Map<?, ?> json2Map(String jsonStr) {
         Map<?, ?> objMap = null;
         if (gson != null) {
             Type type = new com.google.gson.reflect.TypeToken<Map<?, ?>>() {
@@ -109,7 +109,7 @@ public class GsonUtil {
         return objMap;
     }
 
-    public static Object jsonToBean(String jsonStr, Class<?> cl) {
+    public static Object json2Bean(String jsonStr, Class<?> cl) {
         Object obj = null;
         if (gson != null) {
             obj = gson.fromJson(jsonStr, cl);
@@ -146,7 +146,7 @@ public class GsonUtil {
 
     public static Object getJsonValue(String jsonStr, String key) {
         Object rulsObj = null;
-        Map<?, ?> rulsMap = jsonToMap(jsonStr);
+        Map<?, ?> rulsMap = json2Map(jsonStr);
         if (rulsMap != null && rulsMap.size() > 0) {
             rulsObj = rulsMap.get(key);
         }
