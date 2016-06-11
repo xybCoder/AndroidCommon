@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by dell on 2016/5/20.
+ * 获取 Assets，Raw 文件
  */
 public class ResourceUtil {
 
@@ -74,7 +75,7 @@ public class ResourceUtil {
     }
 
     /**
-     * same to {@link ResourceUtils#geFileFromAssets(Context, String)}, but return type is List<String>
+     * same to {@link ResourceUtil#geFileFromAssets(Context, String)}, but return type is List<String>
      *
      * @param context
      * @param fileName
@@ -102,7 +103,7 @@ public class ResourceUtil {
     }
 
     /**
-     * same to {@link ResourceUtils#geFileFromRaw(Context, int)}, but return type is List<String>
+     * same to {@link ResourceUtil#geFileFromRaw(Context, int)}, but return type is List<String>
      *
      * @param context
      * @param resId

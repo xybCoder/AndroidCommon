@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
+ * 系统功能调用工具类
  * Created by dell on 2016/6/11.
  */
 public class SystemUtil {
