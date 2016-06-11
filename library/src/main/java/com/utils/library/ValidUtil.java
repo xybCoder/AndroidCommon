@@ -3,8 +3,7 @@ package com.utils.library;
 import java.util.Collection;
 
 /**
- * @author:Neptune
- * @Description:DateUtil 提供一些对象有效性校验的方法
+ * 提供一些对象有效性校验的方法
  */
 public class ValidUtil {
 
