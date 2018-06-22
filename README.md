@@ -263,6 +263,8 @@
 ## SingletonUtil　单例工具封装类
 ## ResourceUtil 获取 Assets，Raw 文件封装类
 ## ScreenUtil 用单位转换的辅助类
+## EmptyUtil 判空类
+## MacAddressUtil 获取Mac地址
    
   
  
